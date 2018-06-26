@@ -49,6 +49,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+
+    .state('app.qrious', {
+      url: '/qrious',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/qrious.html'
+        }
+      }
+    })
+
+    .state('app.qrious2', {
+      url: '/qrious2',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/qrious2.html',
+          controller: 'QRCtrl'
+        }
+      }
+    })
+
     .state('app.playlists', {
       url: '/playlists',
       views: {
@@ -69,5 +89,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/qrious2');
 });

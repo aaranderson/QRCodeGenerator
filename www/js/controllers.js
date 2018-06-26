@@ -53,4 +53,34 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('QRCtrl', function($scope, $stateParams) {
+  $scope.generate = function () {
+    var data = $("#codeData").val();
+    var size = $("#codeSize").val();
+    console.log(data);
+    console.log(size);
+    if(data == "") {
+      alert('Please enter data');
+      return false;
+  } else {
+    
+      if( $("#image").is(':empty')) {
+          $("#image").append("<img src='http://chart.apis.google.com/chart?cht=qr&chl=" + data + "&chs=" + size + "' alt='qr' />");
+          $("#link").append("<a href='http://chart.apis.google.com/chart?cht=qr&chl=" + data + "&chs=" + size + "'>Permalink</a>");
+          $("#code").append("<textarea readonly='readonly' wrap='off'>&lt;img src='http://chart.apis.google.com/chart?cht=qr&chl=" + data + "&chs=" + size + "' alt='qr' /&gt;</textarea>");
+          return false;
+      } else {
+          $("#image").html("");
+          $("#link").html("");
+          $("#code").html("");
+          $("#image").append("<img src='http://chart.apis.google.com/chart?cht=qr&chl=" + data + "&chs=" + size + "' alt='qr' />");
+          $("#link").append("<a href='http://chart.apis.google.com/chart?cht=qr&chl=" + data + "&chs=" + size + "'>Permalink</a>");
+          $("#code").append("<textarea readonly='readonly wrap='off>&lt;img src='http://chart.apis.google.com/chart?cht=qr&chl=" + data + "&chs=" + size + "' alt='qr' /&gt;</textarea>");
+          return false;
+      }
+  }
+
+  }
 });

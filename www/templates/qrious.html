@@ -1,0 +1,20 @@
+<ion-view view-title="QRious">
+  <ion-content>
+    <h1>QRious</h1>
+    <main>
+      <section>
+    <img id="qrious" height="250" width="250">
+  </section>
+</main>
+    <script src="qrious.js"></script>
+<script>
+  (function() {
+    var qr = new QRious({
+      element: document.getElementById('qrious'),
+      size: 250,
+      value: 'QRious'
+    });
+  })();
+</script>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,25 @@
+<ion-view view-title="QR generator">
+    <ion-content>
+
+        <form id="generator">
+            <label for="codeData">Data</label>
+            <input type="text" id="codeData" name="codeData" size="50" placeholder="Enter here (phone number for example)" />
+            <label for="codeSize">Size:</label>
+            <select id="codeSize" name="codeSize">
+                <option value="75">XSmall</option>
+                <option value="155">Small</option>
+                <option value="186">Medium</option>
+                <option value="248" selected="selected">Large</option>
+                <option value="300">XLarge</option>
+                <option value="450">XXLarge</option>
+            </select>
+            <button id="generate" ng-click="generate()">generate</button>
+        </form>
+
+        <div id="image"></div>
+        <!--<div id="link"></div>-->
+        <!--<div id="code"></div>-->
+
+</ion-content>
+</ion-view>
+
